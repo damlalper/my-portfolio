@@ -1,7 +1,7 @@
 
-  # Student Portfolio
+  # My Portfolio
 
-  This is a code bundle for Student Portfolio. The original project is available at https://www.figma.com/design/hkUQutPXNbA0NRfvQVNPbu/Student-Portfolio.
+  This is a code bundle for My Portfolio. The original project is available at https://www.figma.com/design/hkUQutPXNbA0NRfvQVNPbu/Student-Portfolio.
 
   ## Running the code
 
