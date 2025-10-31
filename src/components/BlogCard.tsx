@@ -14,6 +14,7 @@ interface BlogCardProps {
   createdAt: string;
   image?: string;
   onClick?: () => void;
+  lang?: 'en' | 'tr';
 }
 
 export function BlogCard({
@@ -25,12 +26,13 @@ export function BlogCard({
   createdAt,
   image,
   onClick,
+  lang = 'en',
 }: BlogCardProps) {
   const typeConfig = {
-    conference: { icon: FileText, label: 'Conference', color: 'text-primary' },
-    medium: { icon: BookOpen, label: 'Article', color: 'text-blue-400' },
-    presentation: { icon: Presentation, label: 'Presentation', color: 'text-accent' },
-  };
+    conference: { icon: FileText, label: lang === 'en' ? 'Conference' : 'Konferans', color: 'text-primary' },
+    medium: { icon: BookOpen, label: lang === 'en' ? 'Article' : 'Makale', color: 'text-blue-400' },
+    presentation: { icon: Presentation, label: lang === 'en' ? 'Presentation' : 'Sunum', color: 'text-accent' },
+  } as const;
 
   const { icon: Icon, label, color } = typeConfig[type];
 
@@ -57,7 +59,7 @@ export function BlogCard({
             </Badge>
           </div>
           <span className="text-muted-foreground text-sm font-mono">
-            {new Date(createdAt).toLocaleDateString('en-US', { 
+            {new Date(createdAt).toLocaleDateString(lang === 'en' ? 'en-US' : 'tr-TR', { 
               month: 'short', 
               day: 'numeric', 
               year: 'numeric' 
